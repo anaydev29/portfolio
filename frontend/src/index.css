@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  --color-primary: #6366f1;
+  --color-dark: #f8fafc;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: #1e293b;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a5b4fc;
+}
+
+/* Gradient text animation */
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 4s ease infinite;
+}
+
+/* Glow pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Blob animation for mesh background */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 30px) scale(1.02);
+  }
+}
+
+.animate-blob {
+  animation: blob 10s ease-in-out infinite;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-3000 {
+  animation-delay: 3s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Canvas container - prevent Three.js canvas from blocking interactions */
+canvas {
+  touch-action: none;
+}
+
+/* Glass effect utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
